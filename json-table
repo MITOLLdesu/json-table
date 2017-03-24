@@ -11,9 +11,9 @@
 <body>
   <table>
     <tr>
-	  <th>login</th>
-	  <th>password</th>
-	</tr>
+      <th>login</th>
+      <th>password</th>
+    </tr>
   </table>
   <script>
     xh = new XMLHttpRequest();
@@ -23,11 +23,11 @@
 	      for (i in data.users){
 	        console.log(data.users[i].login);
 	        $("table").append("<tr><td>"+data.users[i].login+"</td><td>"+data.users[i].password+"</td></tr>")
-		    }
-      }
-    };
-  xh.open("GET", "http://kodaktor.ru/j/users", true);
-  xh.send();
+	      }
+         }
+      };
+    xh.open("GET", "http://kodaktor.ru/j/users", true);
+    xh.send();
   </script>
 </body>
 </html>
