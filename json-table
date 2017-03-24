@@ -1,0 +1,33 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <title>RealParsingHours</title>
+  <style>
+    table,td{
+	  border: 1px solid black;
+	}
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+	  <th>login</th>
+	  <th>password</th>
+	</tr>
+  </table>
+  <script>
+    xh = new XMLHttpRequest();
+    xh.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        data = JSON.parse(this.responseText);
+	      for (i in data.users){
+	        console.log(data.users[i].login);
+	        $("table").append("<tr><td>"+data.users[i].login+"</td><td>"+data.users[i].password+"</td></tr>")
+		    }
+      }
+    };
+  xh.open("GET", "http://kodaktor.ru/j/users", true);
+  xh.send();
+  </script>
+</body>
+</html>
