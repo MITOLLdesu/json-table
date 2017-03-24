@@ -4,8 +4,8 @@
   <title>RealParsingHours</title>
   <style>
     table,td{
-	  border: 1px solid black;
-	}
+      border: 1px solid black;
+    }
   </style>
 </head>
 <body>
@@ -20,11 +20,11 @@
     xh.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         data = JSON.parse(this.responseText);
-	      for (i in data.users){
-	        $("table").append("<tr><td>"+data.users[i].login+"</td><td>"+data.users[i].password+"</td></tr>")
-	      }
-         }
-      };
+	  for (i in data.users){
+	    $("table").append("<tr><td>"+data.users[i].login+"</td><td>"+data.users[i].password+"</td></tr>")
+	  }
+       }
+    };
     xh.open("GET", "http://kodaktor.ru/j/users", true);
     xh.send();
   </script>
