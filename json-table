@@ -21,7 +21,6 @@
       if (this.readyState == 4 && this.status == 200) {
         data = JSON.parse(this.responseText);
 	      for (i in data.users){
-	        console.log(data.users[i].login);
 	        $("table").append("<tr><td>"+data.users[i].login+"</td><td>"+data.users[i].password+"</td></tr>")
 	      }
          }
